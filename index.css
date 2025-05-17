@@ -1,0 +1,128 @@
+:root {
+  --primary: #0d6efd;
+  --primary-content: #fff;
+  --secondary: #1fabce;
+  --success: #198754;
+  --info: #0dcaf0;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --light: #f8f9fa;
+  --dark: #212529;
+  --btn-color: var(--primary);
+}
+
+
+body {
+  background-color: var(--dark);
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: color-mix(in srgb,var(--dark), white 30%);
+}
+
+form {
+  margin: auto;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+}
+
+input,.input{
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+  font-size: 1.1rem;
+}
+
+input:hover,.input:hover{
+  border: 2px solid color-mix(in srgb,var(--primary), white 50%);
+}
+input:focus,.input:focus{
+  border: 2px solid var(--primary);
+}
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  label {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: color-mix(in srgb,var(--dark), white 30%);
+  }
+}
+
+
+button,.btn{
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  background-color: var(--btn-color);
+  color: var(--primary-content);
+  border-radius: 0.5rem;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+button:hover,.btn:hover {
+  background-color: color-mix(in srgb,var(--btn-color), white 10%);
+}
+
+button:active,.btn:active {
+  background-color: var(--btn-color);
+}
+
+.btn-primary {
+  --btn-color: var(--primary);
+}
+
+.btn-scondary {
+  --btn-color: var(--secondary);
+}
+.btn-success {
+  --btn-color: var(--success);
+}
+.btn-info {
+  --btn-color: var(--info);
+}
+.btn-warning {
+  --btn-color: var(--warning);
+}
+.btn-danger {
+  --btn-color: var(--danger);
+}
+
+.message {
+  padding: 0 0.5rem;
+  font-size: 1.5rem;
+  color: color-mix(in srgb,var(--dark), white 30%);
+}
+.message-success {
+  color: color-mix(in srgb, var(--success), white 10%);
+}
+.message-error {
+  color: color-mix(in srgb, var(--danger), white 10%);
+}
+
+.link {
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: var(--btn-color);
+  cursor: pointer;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.back {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}

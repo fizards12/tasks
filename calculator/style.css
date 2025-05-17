@@ -1,0 +1,41 @@
+@import url('../index.css');
+
+form {
+  max-width: 768px;
+}
+
+.controllers {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  input {
+    flex-grow: 1;
+  }
+}
+
+
+.actions{
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+    * {
+      flex: 1;
+      min-width: 100px;
+    }
+}
+
+.message {
+  padding: 0 0.5rem;
+  font-size: 1.5rem;
+}
+
+.result {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    span {
+        font-size: 1.5rem;
+        color: color-mix(in srgb,var(--dark), white 60%);
+    }
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <a href="../index.html" class="link back"> &lt; Back</a>
+    <div class="container">
+        <form class="calculator" onsubmit="handleSubmit(event)">
+            <h1>Calculator</h1>
+            <div class="controllers">
+                <input type="text" name="num1" class="input" placeholder="0" />
+                <input type="text" name="num2" class="input" placeholder="0" />
+            </div>
+            <div class="actions">
+                <button type="submit" class="btn" data-action="add">+</button>
+                <button type="submit" class="btn" data-action="subtract">-</button>
+                <button type="submit" class="btn" data-action="multiply">*</button>
+                <button type="submit" class="btn" data-action="divide">/</button>
+            </div>
+            <h1 class="message"></h1>
+            <div class="result">
+                <h1>Result: </h1>
+                <span id="result">0</span>
+            </div>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <title>Form Task</title>
+    <link rel="stylesheet" href="globals.css" />
+    <link rel="stylesheet" href="styleguide.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <a href="../index.html" class="link back"> &lt; Back</a>
+    <div>
+        <form id="form" onsubmit="submitForm(event)">
+            <h1>Add User</h1>
+            <div>
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" placeholder="Name" />
+            </div>
+            <div>
+                <label for="age">Age</label>
+                <input id="age" type="number" name="age" placeholder="Age" />
+            </div>
+            <div>
+                <label for="fav-hobby">Favorite Hobby</label>
+                <input id="fav-hobby" type="text" name="hobby" placeholder="Favorite Hobby" />
+            </div>
+            <button type="submit" class="btn btn-primary">Show Message</button>
+        </form>
+    </div>
+    <script>
+        function submitForm(event) {
+            event.preventDefault();
+            const form = event.target;
+            const formData = new FormData(form);
+            const name = formData.get("name");
+            const age = formData.get("age");
+            const favHobby = formData.get("hobby");
+            let isValid = true;
+            if(!name || !age || !favHobby) {
+                isValid = false;
+            }
+            let messageElement = document.querySelector(".message");
+            if(!messageElement) {
+                messageElement = document.createElement("h1");
+                messageElement.classList.add("message");
+                form.appendChild(messageElement);
+            }
+            if(!isValid) {
+                messageElement.textContent = "Please fill out all fields";
+                messageElement.classList.add("message-error");
+                return;
+            }
+            messageElement.classList.contains("message-error") && messageElement.classList.remove("message-error");
+            form.reset();
+            messageElement.textContent = `Welcome ${name} You are ${age} years old, and your favorite hobby is ${favHobby}`;
+            messageElement.classList.add("message-success");
+        }
+    </script>
+  </body>
+</html>

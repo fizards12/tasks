@@ -1,0 +1,10 @@
+@import url('index.css');
+
+.list{
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    .list-item {
+        max-width: fit-content;
+    }
+}

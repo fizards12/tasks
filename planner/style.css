@@ -1,0 +1,9 @@
+@import url('../index.css');
+
+form{
+    max-width: 768px;
+}
+
+.message{
+    text-align: center;
+}

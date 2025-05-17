@@ -1,0 +1,16 @@
+@import url('../index.css');
+
+form {
+  max-width: 768px;
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    label {
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: color-mix(in srgb,var(--dark), white 30%);
+    }
+  }
+}
+

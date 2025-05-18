@@ -1,7 +1,8 @@
 const links = [
     { folderPath: 'user-msg', label: 'User Message' },
     { folderPath: 'calculator', label: 'calculator' },
-    { folderPath: 'planner', label: 'Planner' }
+    { folderPath: 'planner', label: 'Planner' },
+    { folderPath: 'ToDo', label: 'To Do List' }
 ];
 
 const container = document.querySelector('.list');

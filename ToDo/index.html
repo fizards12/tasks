@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <a href="../index.html" class="link back"> &lt; Back</a>
+    <div class="container">
+        <div class="header"></div>
+        <div class="table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Task</th>
+                        <th>Description</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="add-task" onclick="">
+            <button class="btn btn-wide" onclick="openPopup()">Add Task</button>
+        </div>
+    </div>
+    <div class="popup">
+        <div class="popup-content">
+            <button class="btn-text popup-close" onclick="closePopup()">X</button>
+            <form slot="content" onsubmit="addTask(event)">
+                <h2>Add Task</h2>
+                <div class="form-control">
+                    <label for="title">Title</label>
+                    <input id="title" name="name" type="text" placeholder="Title" />
+                </div>
+                <div class="form-control">
+                    <label for="description">Description</label>
+                    <input id="description" type="text" name="description" placeholder="Description" />
+                </div>
+                <button type="submit" class="btn btn-primary">Add Task</button>
+            </form>
+        </div>
+    </popup>
+    <script src="script.js"></script>
+</body>
+
+</html>

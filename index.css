@@ -8,9 +8,20 @@
   --danger: #dc3545;
   --light: #f8f9fa;
   --dark: #212529;
+  --black: #000;
+
+
   --btn-color: var(--primary);
+  --tb-color: var(--primary);
+  --tb-head-color: color-mix(in srgb,var(--tb-color), var(--dark) 30%);
+  --tb-body-color: color-mix(in srgb,var(--tb-color), transparent 80%);
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
   background-color: var(--dark);
@@ -33,10 +44,11 @@ form {
 }
 
 input,.input{
-  padding: 1rem;
-  border-radius: 0.5rem;
-  border: 1px solid #ccc;
-  font-size: 1.1rem;
+  padding: 0.5rem;
+  border-radius: 6px;
+  outline: none;
+  border: 2px solid #ccc;
+  font-size: 0.75rem;
 }
 
 input:hover,.input:hover{
@@ -51,7 +63,7 @@ input:focus,.input:focus{
   flex-direction: column;
   gap: 0.5rem;
   label {
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 500;
     color: color-mix(in srgb,var(--dark), white 30%);
   }
@@ -59,11 +71,11 @@ input:focus,.input:focus{
 
 
 button,.btn{
-  padding: 1rem 2rem;
-  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
   background-color: var(--btn-color);
   color: var(--primary-content);
-  border-radius: 0.5rem;
+  border-radius: 0.25rem;
   border: none;
   text-decoration: none;
   cursor: pointer;
@@ -76,6 +88,20 @@ button:hover,.btn:hover {
 
 button:active,.btn:active {
   background-color: var(--btn-color);
+}
+
+.btn-text {
+  border: none;
+  background-color: transparent;
+  color: var(--btn-color);
+  cursor: pointer;
+  &:hover{
+    color: var(--light);
+  }
+}
+
+.btn-wide {
+  width: 100%;
 }
 
 .btn-primary {
@@ -112,7 +138,7 @@ button:active,.btn:active {
 
 .link {
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: var(--btn-color);
   cursor: pointer;
 }
@@ -125,4 +151,67 @@ button:active,.btn:active {
   position: absolute;
   top: 1rem;
   left: 1rem;
+}
+
+.table{
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+table {
+  width: 100%;
+  thead {
+    background-color: var(--tb-head-color);
+
+    th {
+      text-align: left;
+      padding: 0.5rem;
+      color: var(--primary-content);
+    }
+  }
+  tbody {
+    background-color: var(--tb-body-color);
+    text-align: left;
+    td {
+      color: var(--tb-color);
+      padding: 0.5rem;
+    }
+  }
+}
+
+.popup {
+  background-color: rgba(0, 0, 0, 0.2);
+  visibility: hidden;
+  position: fixed;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  .popup-content {
+    background-color: white;
+    padding: 1rem;
+    width: 100%;
+    max-width: 540px;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: scale 0.2s ease-in-out;
+    scale: 0.6;
+    .popup-close{
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+    }
+  }
+  &[open] {
+    visibility: visible;
+    .popup-content {
+      scale: 1;
+    }
+  }
 }

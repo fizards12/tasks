@@ -108,7 +108,7 @@ button:active,.btn:active {
   --btn-color: var(--primary);
 }
 
-.btn-scondary {
+.btn-secondary {
   --btn-color: var(--secondary);
 }
 .btn-success {

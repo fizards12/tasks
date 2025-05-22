@@ -1,0 +1,46 @@
+@import url("../index.css");
+
+:root {
+    --primary: #2ecc71;
+    --background-color: #ecf0f1;
+    --text-color: #2c3e50;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+/* Add your custom styles here */
+.container{
+    display: flex;
+    flex-direction: column;
+    padding: 4rem;
+    height: 100vh;
+    gap: 2rem;
+}
+
+.view {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+h1{
+    font-size: 2rem;
+    text-align: unset;
+}
+
+.table {
+    overflow-x:auto;
+    & > * {
+        min-width: 600px;
+    }
+}
+
+.row img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}

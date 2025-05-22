@@ -10,11 +10,10 @@
   --dark: #212529;
   --black: #000;
 
-
   --btn-color: var(--primary);
   --tb-color: var(--primary);
-  --tb-head-color: color-mix(in srgb,var(--tb-color), var(--dark) 30%);
-  --tb-body-color: color-mix(in srgb,var(--tb-color), transparent 80%);
+  --tb-head-color: color-mix(in srgb, var(--tb-color), var(--dark) 30%);
+  --tb-body-color: color-mix(in srgb, var(--tb-color), transparent 80%);
 }
 
 * {
@@ -31,7 +30,7 @@ h1 {
   text-align: center;
   font-size: 2.5rem;
   font-weight: 600;
-  color: color-mix(in srgb,var(--dark), white 30%);
+  color: color-mix(in srgb, var(--dark), white 30%);
 }
 
 form {
@@ -43,7 +42,8 @@ form {
   padding: 1rem;
 }
 
-input,.input{
+input,
+.input {
   padding: 0.5rem;
   border-radius: 6px;
   outline: none;
@@ -51,10 +51,12 @@ input,.input{
   font-size: 0.75rem;
 }
 
-input:hover,.input:hover{
-  border: 2px solid color-mix(in srgb,var(--primary), white 50%);
+input:hover,
+.input:hover {
+  border: 2px solid color-mix(in srgb, var(--primary), white 50%);
 }
-input:focus,.input:focus{
+input:focus,
+.input:focus {
   border: 2px solid var(--primary);
 }
 
@@ -65,12 +67,12 @@ input:focus,.input:focus{
   label {
     font-size: 1rem;
     font-weight: 500;
-    color: color-mix(in srgb,var(--dark), white 30%);
+    color: color-mix(in srgb, var(--dark), white 30%);
   }
 }
 
-
-button,.btn{
+button,
+.btn {
   padding: 0.5rem 1rem;
   font-size: 0.9rem;
   background-color: var(--btn-color);
@@ -82,11 +84,13 @@ button,.btn{
   transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
-button:hover,.btn:hover {
-  background-color: color-mix(in srgb,var(--btn-color), white 10%);
+button:hover,
+.btn:hover {
+  background-color: color-mix(in srgb, var(--btn-color), white 10%);
 }
 
-button:active,.btn:active {
+button:active,
+.btn:active {
   background-color: var(--btn-color);
 }
 
@@ -95,7 +99,7 @@ button:active,.btn:active {
   background-color: transparent;
   color: var(--btn-color);
   cursor: pointer;
-  &:hover{
+  &:hover {
     color: var(--light);
   }
 }
@@ -127,7 +131,7 @@ button:active,.btn:active {
 .message {
   padding: 0 0.5rem;
   font-size: 1.5rem;
-  color: color-mix(in srgb,var(--dark), white 30%);
+  color: color-mix(in srgb, var(--dark), white 30%);
 }
 .message-success {
   color: color-mix(in srgb, var(--success), white 10%);
@@ -153,7 +157,7 @@ button:active,.btn:active {
   left: 1rem;
 }
 
-.table{
+.table {
   border-radius: 12px;
   overflow: hidden;
 }
@@ -175,6 +179,44 @@ table {
     td {
       color: var(--tb-color);
       padding: 0.5rem;
+    }
+  }
+}
+.table {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  .table-header {
+    width: 100%;
+    display: flex;
+    background-color: var(--tb-head-color);
+  }
+  .table-header > * {
+    flex: 1;
+    text-align: left;
+    padding: 0.5rem;
+    color: var(--primary-content);
+    border-right: var(--tb-body-color) 1px solid;
+    &:last-child {
+      border-right: none;
+    }
+  }
+  .table-body {
+    background-color: var(--tb-body-color);
+    text-align: left;
+    .row {
+      color: var(--tb-color);
+      padding: 0.5rem;
+      display: flex;
+      flex: 1;
+      border-bottom: var(--tb-body-color) 1px solid;
+      &:last-child {
+        border-bottom: none;
+      }
+      & > * {
+        flex: 1;
+        padding: 0.5rem;
+      }
     }
   }
 }
@@ -202,7 +244,7 @@ table {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     transition: scale 0.2s ease-in-out;
     scale: 0.6;
-    .popup-close{
+    .popup-close {
       position: absolute;
       top: 0.5rem;
       right: 0.5rem;
@@ -213,5 +255,26 @@ table {
     .popup-content {
       scale: 1;
     }
+  }
+}
+
+.cards{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background-color: color-mix(in srgb, var(--dark), var(--primary) 30%);
+  color: var(--primary-content);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+  &:hover {
+    transform: scale(1.05);
   }
 }

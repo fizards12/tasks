@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <a href="../index.html" class="link back"> &lt; Back</a>
+    <div class="container">
+        <h1>Products</h1>
+        <div class="filters">
+            <button id="table-view" class="btn" onclick="toggleView(event)">View as Cards</button>
+            <input type="text" id="search" class="input" oninput="searchHandler(event)" placeholder="Search By Name or Description" />
+            <input type="number" id="price" class="input" oninput="findBelowPrice(event)" placeholder="Search Below Price Typed" />
+        </div>
+        <div id="view" class="view">
+            <div id="products" class="table">
+                <div class="table-header">
+                    <span>Product</span>
+                    <span>Description</span>
+                    <span>Price</span>
+                    <span>Image</span>
+                    <!-- <span>Actions</span> -->
+                </div>
+                <ul class="table-body">
+                </ul>
+            </div>
+            <div id="products-cards" class="cards">
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

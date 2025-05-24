@@ -44,3 +44,16 @@ h1{
     flex-wrap: wrap;
     gap: 0.5rem;
 }
+
+.pricing-tool{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: start;
+    padding-bottom: 4rem;
+    .tool-content {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+}

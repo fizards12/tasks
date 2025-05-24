@@ -15,21 +15,33 @@
         <div class="filters">
             <button id="table-view" class="btn" onclick="toggleView(event)">View as Cards</button>
             <input type="text" id="search" class="input" oninput="searchHandler(event)" placeholder="Search By Name or Description" />
-            <input type="number" id="price" class="input" oninput="findBelowPrice(event)" placeholder="Search Below Price Typed" />
+            <input type="number" id="price" class="input" oninput="findBelowPrice(event)" placeholder="Search Below Price" />
+            <input type="number" id="price" class="input" oninput="findAboveFinalPrice(event)" placeholder="Search Above Final Price" />
         </div>
         <div id="view" class="view">
             <div id="products" class="table">
-                <div class="table-header">
-                    <span>Product</span>
-                    <span>Description</span>
-                    <span>Price</span>
-                    <span>Image</span>
-                    <!-- <span>Actions</span> -->
-                </div>
-                <ul class="table-body">
-                </ul>
             </div>
             <div id="products-cards" class="cards">
+            </div>
+            <div id="pricing-tool" class="pricing-tool">
+                <h1>Pricing Tool</h1>
+                <div>
+                    <button class="btn btn-primary" onclick="addPriceInput()">Add Another Price</button>
+                </div>
+                <div id="price-inputs" class="tool-content">
+                    <div class="form-control">
+                        <label for="product-input">Product:</label>
+                        <select id="product-input" value="" class="input product-name" placeholder="Select Product">
+                            <option value="" disabled selected>Select Product</option>
+                        </select>
+                    </div>
+                    <div class="form-control">
+                        <label for="price-input-1">Price 1:</label>
+                        <input id="price-input-1" type="number" class="input price-input" placeholder="Enter price" />
+                    </div>
+                </div>
+                <button class="btn" onclick="calculateTotalPriceHandler(event)">Total Price</button>
+                <div class="message"></div>
             </div>
         </div>
     </div>
